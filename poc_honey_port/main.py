@@ -3,10 +3,12 @@ import argparse
 from socket import socket, AF_INET, SOCK_STREAM
 import traceback
 
-def honeypot(address, port=3389):
+ADDRESS = "127.0.0.1" # Localhost
+
+def honeypot(port):
     try:
         ski=socket(AF_INET,SOCK_STREAM)
-        ski.bind((address, port))
+        ski.bind((ADDRESS, port))
         ski.listen()
         conn,addr = ski.accept()
         print('honeypot has been visited by ' + addr[0])
@@ -22,6 +24,12 @@ def honeypot(address, port=3389):
     
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Honeypot on port')
-    parser.add_argument('-a','--address', help='server ip address to use', action='store', required=True)   
+    parser.add_argument(
+        '-p','--port', help='Port where server should listen for connections', 
+        type=int,
+        action='store',
+        required=False,
+        default=3389
+    )   
     args = parser.parse_args()
-    honeypot(args.address)
+    honeypot(args.port)
