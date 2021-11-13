@@ -1,6 +1,7 @@
 import args_parser
-import server
+import server as svr
     
 if __name__ == '__main__':
     args = args_parser.parse()
-    server.accept_connections(args.address, args.port)
+    server = svr.Server(args.address, args.port)
+    server.accept_connections()
