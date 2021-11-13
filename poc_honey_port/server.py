@@ -4,10 +4,10 @@ import traceback
 
 DEFAULT_ADDRESS = "127.0.0.1" # Localhost
 
-def accept_connections(port):
+def accept_connections(address, port):
     try:
         ski=socket(AF_INET,SOCK_STREAM)
-        ski.bind((DEFAULT_ADDRESS, port))
+        ski.bind((address, port))
         ski.listen()
         conn,addr = ski.accept()
         print('honeypot has been visited by ' + addr[0])
