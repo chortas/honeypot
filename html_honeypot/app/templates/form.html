@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    .ohnohoney {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 0;
+      width: 0;
+      z-index: -1;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<form id="myformid" action="http://0.0.0.0:5000/validate" method="post">
+  <!-- Real fields -->
+  <label for="real_name">Your Name</label>
+  <input
+    type="text"
+    id="real_name"
+    name="real_name"
+    placeholder="Your name here"
+    required
+    maxlength="100"
+  />
+  <label for="real_email">Your E-mail</label>
+  <input
+    type="text"
+    id="real_email"
+    name="real_email"
+    placeholder="Your e-mail here"
+    required
+  />
+  <!-- H o n e y p o t -->
+  <label class="ohnohoney" for="fake_name"></label>
+  <input
+    class="ohnohoney"
+    autocomplete="off"
+    type="text"
+    id="fake_name"
+    name="fake_name"
+    placeholder="Your name here"
+  />
+  <label class="ohnohoney" for="fake_email"></label>
+  <input
+    class="ohnohoney"
+    autocomplete="off"
+    type="email"
+    id="fake_email"
+    name="fake_email"
+    placeholder="Your e-mail here"
+  />
+  <input type="submit" value="Submit" />
+</form>
