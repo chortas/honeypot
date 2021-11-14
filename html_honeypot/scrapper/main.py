@@ -1,8 +1,7 @@
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 
 driver = webdriver.Chrome()
-driver.get("http://192.168.1.11:5000/form")
+driver.get("http://0.0.0.0:5000/form")
 
 inputs = driver.find_elements_by_xpath(f"/html/body/form/input")
 
