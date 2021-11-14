@@ -8,8 +8,14 @@ python3 main.py --help
 ```
 
 ## Conectarse al servicio
+### Telnet
 ```
 telnet <IP> <PORT>
 ```
 `IP`: Dirección IP del servicio.  
 `PORT`: Puerto el servicio esta escuchando
+#### Cerrar Telnet
+`Ctrl`+`¿`
+```
+telnet> quit
+```
