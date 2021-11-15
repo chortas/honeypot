@@ -17,11 +17,11 @@ class Server:
 
     def handle_connection(self, conn, addr):
         ip = addr[0]
-        self.logger.info("[Honepot] Attacker's IP address: " + ip)
+        self.logger.info("[honeypot] Attacker's IP address: " + ip)
         conn.settimeout(self.timeout)
         start = time.time()
         try:
-            self.logger.info("[Honepot] Attacker sent:")
+            self.logger.info("[honeypot] Attacker sent:")
             while True:
                 data = conn.recv(1024)
                 end = time.time()
