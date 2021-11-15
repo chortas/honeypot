@@ -3,6 +3,7 @@ import argparse
 DEFAULT_ADDRESS = "127.0.0.1" # localhost
 DEFAULT_PORT = 3389
 DEFAULT_TIMEOUT_S = 1 # In secondos
+DEFAULT_FILE = "output.log"
 
 def _config_parser(parser):
     parser.add_argument(
@@ -25,6 +26,13 @@ def _config_parser(parser):
         action='store',
         required=False,
         default=DEFAULT_TIMEOUT_S
+    )
+    parser.add_argument(
+        '-f','--filename', help=f'File to which the logging output will be written (default={DEFAULT_FILE})',
+        type=str,
+        action='store',
+        required=False,
+        default=DEFAULT_FILE
     )
 
 def parse():
