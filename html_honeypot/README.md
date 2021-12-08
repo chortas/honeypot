@@ -1,5 +1,17 @@
 # Honeypot en formulario
 
+Aplicacion web donde al ingreso nos encontramos con el siguiente formulario:
+
+![image](https://user-images.githubusercontent.com/26822362/145240235-949f3bd7-b07b-4b97-8929-8a1c80f253f5.png)
+
+Luego si se pasa la prueba se redirige al __contenido sensible__ que se encuentra en `/person`:
+
+![image](https://user-images.githubusercontent.com/26822362/145240684-f748c03e-f39a-47e8-9354-3a16f22a3086.png)
+
+En caso de completar los campos ocultos inspeccionando el HTML nos redirige a otra pagina `/bot`:
+
+![image](https://user-images.githubusercontent.com/26822362/145240805-28f21778-ee54-4c66-bc70-842df180f939.png)
+
 ## Objetivo
 Implementar un form con campos ocultos a fin de detectar qué ips son las que llenaron dichos campos, extraer información de las mismas y luego ignorar sus requests.
 
