@@ -21,6 +21,10 @@ def check_if_bot(cookie):
     if cookie and cookie != ACCEPTED_COOKIE:
         return make_response(redirect(url_for('person')))
 
+@app.route('/')
+def home():
+    return redirect(url_for('form'))
+
 @app.route('/form')
 def form():
     cookie = request.cookies.get('secret')
